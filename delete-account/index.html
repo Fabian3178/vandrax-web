@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konto löschen · Vandrax</title>
+<style>
+  :root { color-scheme: dark; --bg:#0c0d0b; --card:#161815; --text:#e9ece6; --muted:#9aa093; --accent:#c6ff3d; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:1.9rem; margin:.4em 0 .2em; }
+  h2 { font-size:1.15rem; margin:1.8em 0 .4em; color:var(--accent); }
+  .muted { color:var(--muted); font-size:.9rem; }
+  ul, ol { padding-left:1.3em; }
+  .card { background:var(--card); border-radius:14px; padding:14px 18px; margin:14px 0; }
+  a { color:var(--accent); }
+  .lang-switch { text-align:right; }
+  .lang-switch button { background:none; border:1px solid var(--muted); color:var(--text); border-radius:8px; padding:4px 10px; cursor:pointer; }
+</style>
+</head>
+<body>
+<main>
+<div class="lang-switch"><button id="switch" type="button">EN</button></div>
+
+<!-- ======================= DEUTSCH ======================= -->
+<div id="de">
+<h1>Konto und Daten löschen</h1>
+<p class="muted">Vandrax – Trainings-App</p>
+
+<h2>Option 1: direkt in der App (sofort)</h2>
+<ol>
+<li>Vandrax öffnen und anmelden.</li>
+<li>Oben rechts auf das Profil-Symbol tippen.</li>
+<li>Ganz unten auf <strong>„Account löschen"</strong> tippen.</li>
+<li>Das angezeigte Bestätigungswort eingeben und <strong>„Endgültig löschen"</strong> bestätigen.</li>
+</ol>
+<p>Dein Konto und alle zugehörigen Daten werden dabei sofort und endgültig gelöscht.</p>
+
+<h2>Option 2: per E-Mail (ohne App-Zugriff)</h2>
+<p>Wenn du die App nicht mehr installiert hast oder dich nicht mehr anmelden kannst, schreib eine E-Mail an
+<a href="mailto:fabr.publish@gmail.com?subject=Vandrax%20Konto%20l%C3%B6schen">fabr.publish@gmail.com</a>
+mit dem Betreff „Vandrax Konto löschen". Verwende dafür die E-Mail-Adresse, mit der du dich registriert hast, damit wir dich zuordnen können. Wir löschen dein Konto und alle Daten innerhalb von <strong>30 Tagen</strong> und bestätigen dir die Löschung per E-Mail.</p>
+
+<h2>Was gelöscht wird</h2>
+<div class="card">
+<ul>
+<li>Dein Konto (E-Mail-Adresse, Anmeldedaten)</li>
+<li>Alle Trainingspläne, Trainingstage und ausgewählten Übungen</li>
+<li>Alle protokollierten Trainings mit Sätzen, Gewichten, Wiederholungen und RIR</li>
+<li>Deine persönlichen Übungsnotizen</li>
+<li>Dein Körpergewicht, falls angegeben</li>
+</ul>
+</div>
+
+<h2>Aufbewahrung</h2>
+<p>Nach der Löschung bleiben keine Trainings- oder Kontodaten von dir gespeichert. Kurzzeitig vorgehaltene technische Server-Protokolle (z. B. IP-Adresse und Zeitpunkt von Anfragen) werden automatisch nach kurzer Zeit gelöscht. Auf deinem Gerät gespeicherte lokale Daten verschwinden, wenn du die App deinstallierst.</p>
+
+<p class="muted">Weitere Informationen findest du in der <a href="../privacy/">Datenschutzerklärung</a>.</p>
+</div>
+
+<!-- ======================= ENGLISH ======================= -->
+<div id="en" hidden>
+<h1>Delete your account and data</h1>
+<p class="muted">Vandrax – training app</p>
+
+<h2>Option 1: directly in the app (immediate)</h2>
+<ol>
+<li>Open Vandrax and sign in.</li>
+<li>Tap the profile icon at the top right.</li>
+<li>Tap <strong>“Delete account”</strong> at the bottom.</li>
+<li>Type the confirmation word shown and confirm with <strong>“Delete permanently”</strong>.</li>
+</ol>
+<p>Your account and all associated data are deleted immediately and permanently.</p>
+
+<h2>Option 2: by email (without app access)</h2>
+<p>If you no longer have the app installed or cannot sign in, send an email to
+<a href="mailto:fabr.publish@gmail.com?subject=Vandrax%20delete%20account">fabr.publish@gmail.com</a>
+with the subject “Vandrax delete account”. Please use the email address you registered with so we can identify your account. We delete your account and all data within <strong>30 days</strong> and confirm the deletion by email.</p>
+
+<h2>What is deleted</h2>
+<div class="card">
+<ul>
+<li>Your account (email address, sign-in data)</li>
+<li>All training plans, training days and chosen exercises</li>
+<li>All logged workouts with sets, weights, repetitions and RIR</li>
+<li>Your personal exercise notes</li>
+<li>Your body weight, if provided</li>
+</ul>
+</div>
+
+<h2>Retention</h2>
+<p>After deletion, no training or account data of yours remains stored. Short-lived technical server logs (e.g. IP address and request time) are deleted automatically after a short time. Local data on your device disappears when you uninstall the app.</p>
+
+<p class="muted">More information is available in the <a href="../privacy/">privacy policy</a>.</p>
+</div>
+</main>
+<script>
+  var de = document.getElementById('de'), en = document.getElementById('en'), btn = document.getElementById('switch');
+  function show(lang) {
+    de.hidden = lang !== 'de'; en.hidden = lang !== 'en';
+    document.documentElement.lang = lang;
+    btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    document.title = lang === 'de' ? 'Konto löschen · Vandrax' : 'Delete account · Vandrax';
+  }
+  btn.addEventListener('click', function () { show(de.hidden ? 'de' : 'en'); });
+  show((navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
+</script>
+</body>
+</html>
